@@ -6,7 +6,7 @@ data class Generator(private val width: Int) {
         return Cell(point)
     }
 
-    private fun pointForIndex(index : Int) : Point{
+    private fun pointForIndex(index : Int) : Point {
         return Point(index % width, index / width)
     }
 
@@ -16,7 +16,8 @@ data class Generator(private val width: Int) {
 }
 
 data class Field(private val size : Size) {
-    private val generator : Generator = Generator(size.width)
+    private val generator : Generator =
+        Generator(size.width)
     var cells: ArrayList<Cell> = arrayListOf()
 
     init {

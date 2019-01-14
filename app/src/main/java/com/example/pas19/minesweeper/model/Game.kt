@@ -4,7 +4,10 @@ import kotlin.collections.ArrayList
 
 data class Game(private var field : Field, private val initialLocation : Point, private val bombsCount : Int) {
 
-    constructor(size : Size, initialLocation : Point , bombsCount : Int) : this(Field(size),initialLocation, bombsCount){
+    constructor(size : Size, initialLocation : Point, bombsCount : Int) : this(
+        Field(
+            size
+        ),initialLocation, bombsCount){
         putBombs()
         addLabels()
     }
@@ -29,7 +32,7 @@ data class Game(private var field : Field, private val initialLocation : Point, 
             if (cell.type == Cell.Type.Bomb) {
                 val neighbours = field.getNeighbourCells(cell)
                 for(neighbour in neighbours)
-                    if (neighbour.type !=Cell.Type.Bomb) {
+                    if (neighbour.type != Cell.Type.Bomb) {
                     neighbour.type = Cell.Type.Label
                     neighbour.label++
                  }
@@ -45,7 +48,7 @@ data class Game(private var field : Field, private val initialLocation : Point, 
         if(crrCell.type == Cell.Type.Empty) {
             val neighbours = field.getNeighbourCells(crrCell)
             for(neighbour in neighbours) {
-                if(!openedCells.contains(neighbour) && neighbour.type!=Cell.Type.Bomb)
+                if(!openedCells.contains(neighbour) && neighbour.type!= Cell.Type.Bomb)
                     revealCellAt(neighbour.location)
             }
         }

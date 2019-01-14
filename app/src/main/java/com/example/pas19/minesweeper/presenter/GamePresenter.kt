@@ -1,10 +1,15 @@
 package com.example.pas19.minesweeper
 
-class GamePresenter(private var gameView: GameView,private val gameModel : GameModel) : StateListener {
+class GamePresenter(private var gameView: GameView, private val gameModel : GameModel) :
+    StateListener {
     enum class State {
         Win, Lose, Continues
     }
-    var state : State = State.Continues
+    enum class Level{
+        Beginner, Intermediate, Expert
+    }
+    var state : State =
+        State.Continues
     fun openCellAt(point: Point){
         gameModel.revealCellAt(point, this)
     }
@@ -14,7 +19,7 @@ class GamePresenter(private var gameView: GameView,private val gameModel : GameM
             when (i.type) {
                 Cell.Type.Empty -> GameView.CellType.Empty
                 Cell.Type.Bomb -> when (state) {
-                        State.Continues-> GameView.CellType.Bomb
+                        State.Continues -> GameView.CellType.Bomb
                         State.Win -> GameView.CellType.Flagged
                         State.Lose -> GameView.CellType.Exploded
                     }
@@ -43,6 +48,15 @@ class GamePresenter(private var gameView: GameView,private val gameModel : GameM
         gameModel.restart()
         buildGameField()
         gameView.isBlocked = false
+    }
+
+    fun changeLevel(level : Level) {
+        when(level){
+            Level.Beginner -> gameModel.configuration = GameModel.Configuration.Beginner
+            Level.Intermediate -> gameModel.configuration = GameModel.Configuration.Intermediate
+            Level.Expert -> gameModel.configuration = GameModel.Configuration.Expert
+        }
+        newGame()
     }
 
     fun buildGameField() {

@@ -1,8 +1,6 @@
 package com.example.pas19.minesweeper
 
-import android.system.Os.remove
 import java.util.*
-import kotlin.collections.ArrayList
 
 fun <E : Any?> MutableList<E>.pickRandomElement() : E? {
     if(isEmpty())

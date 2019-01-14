@@ -16,8 +16,3 @@ interface StateListener {
     fun onWin()
     fun onLose()
 }
-
-/*interface GameListener {
-    fun onWin()
-    fun onLose()
-}*/

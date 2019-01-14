@@ -1,11 +1,7 @@
 package com.example.pas19.minesweeper
 
 import android.content.Context
-import android.util.AttributeSet
 import android.widget.ImageButton
-
-
-
 
 class CellButton(context: Context) : ImageButton(context) {
     init{
@@ -38,6 +34,5 @@ class CellButton(context: Context) : ImageButton(context) {
                 }
         }
     }
-
 }
 

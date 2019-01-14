@@ -5,15 +5,8 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".GameActivity" android:background="@color/colorPrimaryDark">
-        <TableLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="0dp" android:layout_marginEnd="0dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginTop="0dp" app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginBottom="0dp"
-                app:layout_constraintBottom_toBottomOf="parent" android:id="@+id/fieldTable"
-                android:background="@color/colorFieldBackground">
-        </TableLayout>
+        tools:context=".view.GameActivity"
+        android:background="@color/colorPrimaryDark"
+        android:id="@+id/activity_main" android:padding="4dp">
+
 </android.support.constraint.ConstraintLayout>

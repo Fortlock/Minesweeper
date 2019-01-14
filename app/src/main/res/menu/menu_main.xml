@@ -2,5 +2,9 @@
 <menu xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:title="@string/action_new_game" android:id="@+id/action_new_game"/>
-    <item android:title="@string/action_settings" android:id="@+id/action_settings"/>
+    <group android:checkableBehavior="single">
+        <item android:title="@string/beginner" android:id="@+id/action_beginner" android:checked="true"/>
+        <item android:title="@string/intermediate" android:id="@+id/action_intermediate"/>
+        <item android:title="@string/expert" android:id="@+id/action_expert"/>
+    </group>
 </menu>
